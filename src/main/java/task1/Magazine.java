@@ -36,13 +36,25 @@ public class Magazine implements Printable {
 
     @Override
     public String toString() {
-        return "task1.Magazine{" +
+        return "Magazine{" +
                 "magazineName='" + magazineName + '\'' +
                 '}';
     }
 
     @Override
     public void print() {
-        System.out.println("task1.Magazine name is: " + getMagazineName());
+        System.out.println("Magazine name is: " + getMagazineName());
     }
+
+    public static void printMagazines(Printable[] p) {
+        for (int i = 0; i < p.length; i++) {
+            if (p[i] instanceof Magazine) {
+                System.out.println("Method printMagazines: ");
+                p[i].print();
+                break;
+            }
+
+        }
+    }
+
 }

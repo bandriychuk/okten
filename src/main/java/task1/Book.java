@@ -36,13 +36,24 @@ public class Book implements Printable {
 
     @Override
     public String toString() {
-        return "task1.Book{" +
+        return "Book{" +
                 "bookName='" + bookName + '\'' +
                 '}';
     }
 
     @Override
     public void print() {
-        System.out.println("task1.Book name is: " + getBookName());
+        System.out.println("Book name is: " + getBookName());
+    }
+
+    public static void printBooks(Printable[] p) {
+        for (int i = 0; i < p.length; i++) {
+            if (p[i] instanceof Book) {
+                System.out.println("Method printBooks: ");
+                p[i].print();
+                break;
+            }
+
+        }
     }
 }

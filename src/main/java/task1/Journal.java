@@ -36,13 +36,24 @@ public class Journal implements Printable{
 
     @Override
     public String toString() {
-        return "task1.Journal{" +
+        return "Journal{" +
                 "journalName='" + journalName + '\'' +
                 '}';
     }
 
     @Override
     public void print() {
-        System.out.println("task1.Journal name is: " + getJournalName());
+        System.out.println("Journal name is: " + getJournalName());
+    }
+
+    public static void printJournals(Printable[] p) {
+        for (int i = 0; i < p.length; i++) {
+            if (p[i] instanceof Journal) {
+                System.out.println("Method printJournals: ");
+                p[i].print();
+                break;
+            }
+
+        }
     }
 }
