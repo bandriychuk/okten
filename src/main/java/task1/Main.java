@@ -1,9 +1,5 @@
 package task1;
 
-import static task1.Book.printBooks;
-import static task1.Journal.printJournals;
-import static task1.Magazine.printMagazines;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -18,13 +14,13 @@ public class Main {
         }
 
         System.out.println("\n");
-        printMagazines(p);
+        Magazine.printMagazines(p);
 
         System.out.println("\n");
-        printBooks(p);
+        Book.printBooks(p);
 
         System.out.println("\n");
-        printJournals(p);
+        Journal.printJournals(p);
 
     }
 }

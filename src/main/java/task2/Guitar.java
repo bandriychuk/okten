@@ -43,6 +43,6 @@ public class Guitar implements Instruments{
 
     @Override
     public void play() {
-        System.out.println("Play the Guitar with: " + getCountOfStrings() + " Strings");
+        System.out.println("Play the Guitar with: " + this.countOfStrings + " Strings");
     }
 }

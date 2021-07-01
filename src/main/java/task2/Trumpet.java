@@ -43,6 +43,6 @@ public class Trumpet implements Instruments {
 
     @Override
     public void play() {
-        System.out.println("Play the Trumpet with diameter: " + getDiameter());
+        System.out.println("Play the Trumpet with diameter: " + this.diameter);
     }
 }

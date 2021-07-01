@@ -47,13 +47,20 @@ public class Magazine implements Printable {
     }
 
     public static void printMagazines(Printable[] p) {
-        for (int i = 0; i < p.length; i++) {
-            if (p[i] instanceof Magazine) {
-                System.out.println("Method printMagazines: ");
-                p[i].print();
+//        for (int i = 0; i < p.length; i++) {
+//            if (p[i] instanceof Magazine) {
+//                System.out.println("Method printMagazines: ");
+//                p[i].print();
+//                break;
+//            }
+//
+//        }
+        for (Printable printable : p) {
+            if (printable instanceof Magazine) {
+                System.out.println("Method printMagazine: ");
+                printable.print();
                 break;
             }
-
         }
     }
 

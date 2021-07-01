@@ -47,13 +47,20 @@ public class Journal implements Printable{
     }
 
     public static void printJournals(Printable[] p) {
-        for (int i = 0; i < p.length; i++) {
-            if (p[i] instanceof Journal) {
+//        for (int i = 0; i < p.length; i++) {
+//            if (p[i] instanceof Journal) {
+//                System.out.println("Method printJournals: ");
+//                p[i].print();
+//                break;
+//            }
+//        }
+
+        for (Printable printable : p) {
+            if (printable instanceof Journal) {
                 System.out.println("Method printJournals: ");
-                p[i].print();
+                printable.print();
                 break;
             }
-
         }
     }
 }

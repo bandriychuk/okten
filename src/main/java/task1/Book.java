@@ -47,13 +47,20 @@ public class Book implements Printable {
     }
 
     public static void printBooks(Printable[] p) {
-        for (int i = 0; i < p.length; i++) {
-            if (p[i] instanceof Book) {
-                System.out.println("Method printBooks: ");
-                p[i].print();
+//        for (int i = 0; i < p.length; i++) {
+//            if (p[i] instanceof Book) {
+//                System.out.println("Method printBooks: ");
+//                p[i].print();
+//                break;
+//            }
+//
+//        }
+        for (Printable printable : p) {
+            if (printable instanceof Book) {
+                System.out.println("Method printBook: ");
+                printable.print();
                 break;
             }
-
         }
     }
 }
