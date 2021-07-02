@@ -1,6 +1,5 @@
 package lesson04;
 
-import java.util.List;
 import java.util.Objects;
 
 public class User {
@@ -103,5 +102,8 @@ public class User {
                 ", gender=" + gender +
                 ", pets=" + pets +
                 '}';
+    }
+
+    public void setPets(String petsName, int petsAge, String petsType) {
     }
 }

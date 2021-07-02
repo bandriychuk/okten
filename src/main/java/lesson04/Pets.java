@@ -1,19 +1,14 @@
 package lesson04;
 
-public class Pets extends User {
+import java.util.Objects;
+
+public class Pets {
     private int owner;
     private String petName;
     private int petAge;
     private String petsType;
 
     public Pets() {
-    }
-
-    public Pets(int owner, String petName, int petAge, String petsType) {
-        this.owner = owner;
-        this.petName = petName;
-        this.petAge = petAge;
-        this.petsType = petsType;
     }
 
     public Pets(String petName, int petAge, String petsType) {
@@ -54,4 +49,26 @@ public class Pets extends User {
         this.petsType = petsType;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pets pets = (Pets) o;
+        return owner == pets.owner && petAge == pets.petAge && Objects.equals(petName, pets.petName) && Objects.equals(petsType, pets.petsType);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(owner, petName, petAge, petsType);
+    }
+
+    @Override
+    public String toString() {
+        return "Pets{" +
+                "owner=" + owner +
+                ", petName='" + petName + '\'' +
+                ", petAge=" + petAge +
+                ", petsType='" + petsType + '\'' +
+                '}';
+    }
 }
