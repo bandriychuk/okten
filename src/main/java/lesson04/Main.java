@@ -30,10 +30,11 @@ public class Main {
                     String firstName = setStringValue(in, "Enter firstName:");
                     String lastName = setStringValue(in, "Enter lastName:");
 
-                    System.out.println("Enter age:");
-                    int age = in.nextInt();
-                    System.out.println("Enter gender man/women:");
-                    String gender = in.next();
+                    int age = setIntValue(in, "Enter age:");
+                    String gender = setStringValue(in, "Enter gender man/women:");
+
+                    String presentPets = setStringValue(in, "Do you have a pets? yes/no:");
+                    String addPets = setStringValue(in, "Want add your pets? yes/no:");
 
                     if (gender.equalsIgnoreCase("man")) {
                         users.add(new User(id, firstName, lastName, age, UserGender.MAN));
@@ -42,8 +43,29 @@ public class Main {
                     } else {
                         System.out.println("Incorrect gender type");
                     }
-                    for (User user : users) {
-                        System.out.println(user);
+
+                    if (presentPets.equalsIgnoreCase("yes")) {
+                        if (addPets.equalsIgnoreCase("yes")) {
+
+                            getMember(users);
+                            int isd = setIntValue(in, "Please enter member id:");
+                            for (User user : users) {
+                                if (isd == users.indexOf(user)) {
+                                    System.out.println(user);
+                                }
+                            }
+
+                            String petsName = setStringValue(in, "Please enter pets Name:");
+                            int petsAge = setIntValue(in, "Please enter pets Age:");
+                            String petsType = setStringValue(in,"Please enter pets Type:");
+
+                            for (User user : users) {
+                                if (isd == users.indexOf(user)) {
+                                    user.setPets(new Pets(petsName, petsAge, petsType));
+                                    System.out.println(user);
+                                }
+                            }
+                        }
                     }
                     break;
                 }
@@ -52,19 +74,16 @@ public class Main {
                     System.out.println("Add a pet to a club member");
                     System.out.println("Show all member: ");
                     getMember(users);
-                    int id = setIntValue(in,"Please enter member id:");
+                    int id = setIntValue(in, "Please enter member id:");
                     for (User user : users) {
                         if (id == users.indexOf(user)) {
                             System.out.println(user);
                         }
                     }
 
-                    System.out.println("Please enter pets Name:");
-                    String petsName = Main.setStringValue(in, "Please enter pets Name:");
-                    int petsAge = setIntValue(in,"Please enter pets Age:");
-
-                    System.out.println("Please enter pets Type:");
-                    String petsType = in.next();
+                    String petsName = setStringValue(in, "Please enter pets Name:");
+                    int petsAge = setIntValue(in, "Please enter pets Age:");
+                    String petsType = setStringValue(in,"Please enter pets Type:");
 
                     for (User user : users) {
                         if (id == users.indexOf(user)) {
@@ -75,7 +94,7 @@ public class Main {
                     break;
                 }
 
-                case 3:{
+                case 3: {
 
 
                 }
@@ -101,7 +120,7 @@ public class Main {
                     int id = setIntValue(in, "Enter id:");
                     for (User user : users) {
                         if (id == users.indexOf(user))
-                            System.out.println(user.getFirstName()+ " " + user.getLastName() + " " + user.getPets());
+                            System.out.println(user.getFirstName() + " " + user.getLastName() + " " + user.getPets());
                     }
                     break;
                 }
