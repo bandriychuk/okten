@@ -16,11 +16,11 @@ public class ZooClub {
         return user;
     }
 
-    public void removeUser(User user) {
+    public void removeUser(int id) {
         Iterator<User> iterator = this.userList.iterator();
         while (iterator.hasNext()){
             User currentUser = iterator.next();
-            if (currentUser.equals(user)){
+            if (currentUser.getId() == id){
                 iterator.remove();
             }
             System.out.println(userList);
@@ -39,7 +39,6 @@ public class ZooClub {
     }
 
     public void getAllMembers() {
-
         System.out.println("All club members: ");
             for (User user : userList) {
                 System.out.println("Member List: " + user);

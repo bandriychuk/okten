@@ -43,8 +43,8 @@ public class Main {
 
         } else if (menu == 4) {
             System.out.println("4. Remove member");
-            User newMember = userClass.getMember(in, pets);
-            zooClub.removeUser(newMember);
+            int idForRemove = in.nextInt();
+            zooClub.removeUser(idForRemove);
 
         } else if (menu == 5) {
             System.out.println("5. Bring out all the animals of a particular owner ");
