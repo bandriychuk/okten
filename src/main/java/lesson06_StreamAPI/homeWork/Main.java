@@ -69,7 +69,7 @@ public class Main {
         System.out.println("\n//6. Знайти всі комп'ютери які мають жорсткий ссд диск більше 500гб та процессор і7");
         List<Computer> sortByPrice = laptops
                 .stream()
-                .filter(computer -> computer.getHardDrive().getMemory() > 500)
+                .filter(computer -> computer.getHardDrive().getMemory() > 500 && computer.getProcessor().getProcessorType().equals(ProcessorType.i7))
 //                .sorted((o1, o2) -> o1.getPrice() - o2.getPrice()) // - чогось видає помилку
                 .sorted((Comparator.comparingDouble(Computer::getPrice)))
                 .collect(Collectors.toList());
